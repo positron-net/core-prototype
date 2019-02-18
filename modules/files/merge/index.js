@@ -1,6 +1,4 @@
 const BufferList = require('bl')
-const fs = require('fs')
-
 const bl = new BufferList()
 
 module.exports = (buffers) => {

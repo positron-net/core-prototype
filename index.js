@@ -15,6 +15,10 @@ core = {
       download: require('./modules/network/protocol/download'),
       upload: require('./modules/network/protocol/upload')
     }
+  },
+
+  server: {
+
   }
 }
 
