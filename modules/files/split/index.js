@@ -1,21 +1,16 @@
-const BufferList = require('bl')
 const fs = require('fs')
-
-let bl = new BufferList()
 
 module.exports = (path, parts) => {
   return new Promise((resolve) => {
-    fs.createReadStream(path).pipe(BufferList((err, data) => {
-
+    fs.readFile(path, (err, data) => {
+      
       let i = 0
       let part = 0
       let result = []
 
-      bl.append(data)
+      while (i < data.length) {
+        let buffer = data.slice(i, i += Math.round(data.length / parts))
 
-      while (i < bl.length) {
-        let buffer = bl.slice(i, i += parts)
-    
         let fileData = {
           id: part,
           checksum: Buffer.from(buffer).toString('base64'),
@@ -28,7 +23,6 @@ module.exports = (path, parts) => {
       }
 
       resolve(result)
-
-    }))
+    })
   })
 }

@@ -1,5 +1,6 @@
 const addr = require('address')
 const publicIp = require('public-ip')
+const macaddress = require('macaddress')
 
 module.exports = () => {
   return new Promise(resolve => {
@@ -9,10 +10,16 @@ module.exports = () => {
       key: new Date().getTime().toString(16)
     }
 
-    addr.mac((err, mac) => {
-      address.mac = Buffer.from(mac).toString('base64').replace('=', '')
+    macaddress.one((err, mac) => {
+      if (err) {
+        console.log(err)
+      } else {
+        address.mac = Buffer.from(mac).toString('base64').replace('=', '')
+      }
     })
-  
+    
+    //address.mac = Buffer.from('57:AA:AA:AA:AA:AA').toString('hex').replace('=', '')
+
     publicIp.v4().then(ip => {
       address.ip = Buffer.from(ip).toString('base64').replace('=', '')
 

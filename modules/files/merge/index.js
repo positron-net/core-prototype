@@ -1,20 +1,21 @@
-const BufferList = require('bl')
-const bl = new BufferList()
-
 module.exports = (buffers) => {
-  for (i in buffers) {
+  return new Promise((resolve, reject) => {
+    let file = []
 
-    let bufferChecksum = Buffer.from(buffers[i].buffer).toString('base64')
-
-    if (bufferChecksum !== buffers[i].checksum) {
-      console.log('File corrupted')
-    } else {
-      bl.append(buffers[i].buffer)
-    }
-  }
+    for (i in buffers) {
   
-  return {
-    checksum: Buffer.from(Buffer.concat(bl._bufs)).toString('base64'),
-    buffer: Buffer.concat(bl._bufs)
-  }
+      let bufferChecksum = Buffer.from(buffers[i].buffer).toString('base64')
+  
+      if (bufferChecksum !== buffers[i].checksum) {
+        reject('File corrupted')
+      } else {
+        file.push(buffers[i].buffer)
+      }
+    }
+    
+    resolve({
+      checksum: Buffer.from(Buffer.concat(file)).toString('base64'),
+      buffer: Buffer.concat(file)
+    })
+  })
 }

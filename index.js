@@ -1,24 +1,24 @@
-core = {
+const core = {
+  utils: {
+    event: require('./modules/utils/event')
+  },
+
   files: {
-    split: require('./modules/files/split'),
     merge: require('./modules/files/merge'),
+    split: require('./modules/files/split')
   },
 
   network: {
+    connection: {
+      discover: require('./modules/network/connection/discover'),
+      receiver: require('./modules/network/connection/receiver'),
+      sender: require('./modules/network/connection/sender')
+    },
+
     address: {
       generate: require('./modules/network/address/generate'),
       parse: require('./modules/network/address/parse')
-    },
-
-    protocol: {
-      discover: require('./modules/network/protocol/discover'),
-      download: require('./modules/network/protocol/download'),
-      upload: require('./modules/network/protocol/upload')
     }
-  },
-
-  server: {
-
   }
 }
 

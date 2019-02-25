@@ -1,17 +1,25 @@
 {
-  "name": "core",
+  "name": "positron-core",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "address": "^1.0.3",
-    "bl": "^2.2.0",
-    "public-ip": "^3.0.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/positron-net/core.git"
+  },
   "author": "Robin Jullian",
-  "license": "MIT"
+  "license": "NPOSL-3.0",
+  "bugs": {
+    "url": "https://github.com/positron-net/core/issues"
+  },
+  "homepage": "https://github.com/positron-net/core#readme",
+  "dependencies": {
+    "address": "^1.0.3",
+    "macaddress": "^0.2.9",
+    "public-ip": "^3.0.0",
+    "utp-punch": "^1.0.0"
+  }
 }
