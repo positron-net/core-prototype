@@ -1,0 +1,44 @@
+{
+  "france": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "swiss": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "italia": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "sweden": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "ireland": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "england": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+  "": {
+    "name": "France",
+    "abr": "fr",
+    "lang": ["fr_FR"],
+    "continent": "EU"
+  },
+}

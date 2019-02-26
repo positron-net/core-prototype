@@ -16,8 +16,8 @@ const core = {
     },
 
     address: {
-      generate: require('./modules/network/address/generate'),
-      parse: require('./modules/network/address/parse')
+      generate: require('./modules/network/uid/generate'),
+      parse: require('./modules/network/uid/parse')
     }
   }
 }

@@ -1,0 +1,53 @@
+[
+  {
+      "continent": "EU",
+      "servers": [
+          {
+              "name": "discover-eu-grenoble",
+              "address": "discover-eu-01.positron.org",
+              "country": "FR",
+              "city": "Grenoble"
+          },
+          {
+              "name": "discover-eu-stockholm",
+              "address": "discover-eu-02.positron.org",
+              "country": "SE",
+              "city": "Stockholm"
+          }
+      ]
+  },
+  {
+      "continent": "US",
+      "servers": [
+          {
+              "name": "discover-us-newyork",
+              "address": "discover-am-01.positron.org",
+              "country": "US",
+              "city": "New-York"
+          },
+          {
+              "name": "google-positron-us-001",
+              "address": "positron-discover-001.google.com",
+              "country": "US",
+              "city": "St Francisco"
+          }
+      ]
+  },
+  {
+      "continent": "AS",
+      "servers": [
+          {
+              "name": "discover-as-tokio",
+              "address": "discover-as-01.positron.org",
+              "country": "JP",
+              "city": "Tokio"
+          },
+          {
+              "name": "baidu-positron-as-001",
+              "address": "positron-discover-001.baidu.ch",
+              "country": "CH",
+              "city": "Pekin"
+          }
+      ]
+  }
+]

@@ -1,8 +1,6 @@
 const Node = require('utp-punch')
 
 const receiver = new Node(socket => {
-  console.log('[RECEIVER] > socket connected')
-
   EventsEmitter.on('RECEIVER_TO_SENDER', data => {
     socket.write(JSON.stringify(data))
   })
@@ -13,7 +11,7 @@ const receiver = new Node(socket => {
   })
 
   socket.on('end', () => {
-    console.log('[RECEIVER] > socket disconnected')
+    EventsEmitter.emit('RECEIVER_CONNECTION_END')
     receiver.close()
   })
 })

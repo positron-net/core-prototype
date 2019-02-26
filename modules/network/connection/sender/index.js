@@ -20,7 +20,7 @@ module.exports = {
             
             socket.on('end', () => {
               sender.close()
-              console.log('[SENDER] > socket ended')
+              EventsEmitter.emit('SENDER_CONNECTION_END')
             })
           })
         } else {
