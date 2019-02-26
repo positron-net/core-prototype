@@ -1,12 +1,15 @@
+const WebSocket = require('ws')
 const servers = require('./servers.json')
 
+let ws
+
 const discover = {
-    getserver () {
+    getServer () {
         return new Promise(resolve => {
             // Temporary
             const location = {
                 continent: 'EU',
-                country: 'SE'
+                country: 'FR'
             }
 
             for (a in servers) {
@@ -22,9 +25,21 @@ const discover = {
         })
     },
 
-    connectToDiscover (server, uid) {
-        // send uid to the server
-        console.log(server.address, uid)
+    send (message, content) {
+        ws.send(JSON.stringify({
+            message: message,
+            content: content
+        }))
+    },
+
+    connect (server, uid) {
+        return new Promise(resolve => {
+            ws = new WebSocket(`ws://${server.address}:8080/`)
+            ws.on('open', () => {
+                this.send('ADD_CLIENT', uid)
+                resolve(ws)
+            })
+        })
     },
 
     getRandomClient () {

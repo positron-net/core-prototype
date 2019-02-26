@@ -11,8 +11,8 @@ module.exports = () => {
 
     macaddress.one((err, mac) => {
       if (err) {
-        // reject(err)
-        uid.mac = 'AA:AA:AA:AA:AA'
+        reject(err)
+        // uid.mac = 'AA:AA:AA:AA:AA'
       } else {
         uid.mac = mac
       }
@@ -24,9 +24,9 @@ module.exports = () => {
       resolve(Buffer.from(`${uid.mac}.${uid.ip}.${uid.key}`).toString('base64'))
     })
     .catch(e => {
-      // reject(e)
-      uid.ip = Buffer.from('1.1.1.1').toString('hex')
-      resolve(Buffer.from(`${uid.mac}.${uid.ip}.${uid.key}`).toString('base64'))
+      reject(e)
+      // uid.ip = Buffer.from('1.1.1.1').toString('hex')
+      // resolve(Buffer.from(`${uid.mac}.${uid.ip}.${uid.key}`).toString('base64'))
     })
 
   })

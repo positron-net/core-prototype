@@ -3,16 +3,16 @@
       "continent": "EU",
       "servers": [
           {
-              "name": "discover-eu-grenoble",
-              "address": "discover-eu-01.positron.org",
-              "country": "FR",
-              "city": "Grenoble"
+            "name": "discover-test",
+            "address": "127.0.0.1",
+            "country": "FR",
+            "city": "Vizille"
           },
           {
-              "name": "discover-eu-stockholm",
-              "address": "discover-eu-02.positron.org",
-              "country": "SE",
-              "city": "Stockholm"
+            "name": "discover-eu-stockholm",
+            "address": "discover-eu-01.positron.org",
+            "country": "SE",
+            "city": "Stockholm"
           }
       ]
   },
