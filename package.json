@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/positron-net/core#readme",
   "dependencies": {
-    "macaddress": "^0.2.9",
-    "public-ip": "^3.0.0",
     "utp-punch": "^1.0.0",
     "ws": "^6.1.4"
   }

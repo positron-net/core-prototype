@@ -15,10 +15,7 @@ const core = {
       sender: require('./modules/network/connection/sender')
     },
 
-    address: {
-      generate: require('./modules/network/uid/generate'),
-      parse: require('./modules/network/uid/parse')
-    }
+    uid: require('./modules/network/uid')
   }
 }
 
