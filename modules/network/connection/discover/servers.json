@@ -3,10 +3,10 @@
       "continent": "EU",
       "servers": [
           {
-            "name": "discover-test",
-            "address": "127.0.0.1",
+            "name": "discover-eu-niort",
+            "address": "shuttleapp.io",
             "country": "FR",
-            "city": "Vizille"
+            "city": "Niort"
           },
           {
             "name": "discover-eu-stockholm",

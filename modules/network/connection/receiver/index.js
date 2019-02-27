@@ -7,6 +7,7 @@ const receiver = new Node(socket => {
 
   socket.on('data', data => {
     EventsEmitter.emit('RECEIVER_DATA', JSON.parse(data))
+    console.log(data)
     socket.end()
   })
 
@@ -28,7 +29,7 @@ module.exports = {
 
   punch (host, port) {
     return new Promise((resolve, reject) => {
-      receiver.punch(20, port, host, success => {
+      receiver.punch(2000, port, host, success => {
         if (success) {
           resolve()
         } else {

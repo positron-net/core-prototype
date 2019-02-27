@@ -13,7 +13,7 @@ module.exports = {
 
   connect (host, port) {
     return new Promise((resolve, reject) => {
-      sender.punch(20, port, host, success => {
+      sender.punch(2000, port, host, success => {
         if (success) {
           sender.connect(port, host, socket => {
             resolve(socket)
