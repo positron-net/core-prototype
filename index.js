@@ -16,6 +16,14 @@ const core = {
     },
 
     uid: require('./modules/network/uid')
+  },
+
+  database: {
+    set: require('./modules/database/set'),
+    has: require('./modules/database/has'),
+    get: require('./modules/database/get'),
+    remove: require('./modules/database/remove'),
+    update: require('./modules/database/update')
   }
 }
 

@@ -12,16 +12,7 @@ const discover = {
         country: 'FR'
       }
 
-      for (a in servers) {
-        if (servers[a].continent === location.continent) {
-          for (b in servers[a].servers) {
-            if (servers[a].servers[b].country === location.country) {
-              resolve(servers[a].servers[b])
-              break
-            }
-          }
-        }
-      }
+      resolve(servers[Math.floor(Math.random() * servers.length)])
     })
   },
 
