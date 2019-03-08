@@ -7,30 +7,29 @@ const discover = {
   getServer () {
     return new Promise(resolve => {
       // Temporary
-      const location = {
-        continent: 'EU',
-        country: 'FR'
-      }
+      const server = servers[Math.floor(Math.random() * servers.length)]
 
-      resolve(servers[Math.floor(Math.random() * servers.length)])
+      resolve(servers[0])
     })
   },
+
+  connect (server, uid) {
+    return new Promise(resolve => {
+      ws = new WebSocket(`ws://${server.address}:5112/`)
+      console.log(`[INFO] > Connecting to ${server.name}...`)
+      ws.on('open', () => {
+        this.send('ADD_CLIENT', uid)
+        resolve(ws)
+      })
+    })
+  },
+
 
   send (message, content) {
     ws.send(JSON.stringify({
       message: message,
       content: content
     }))
-  },
-
-  connect (server, uid) {
-    return new Promise(resolve => {
-      ws = new WebSocket(`ws://${server.address}:5112/`)
-      ws.on('open', () => {
-        this.send('ADD_CLIENT', uid)
-        resolve(ws)
-      })
-    })
   },
 
   getRandomClient () {

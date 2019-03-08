@@ -1,5 +1,11 @@
 [
   {
+    "name": "discover-dev",
+    "address": "127.0.0.1",
+    "country": "LOCAL",
+    "city": "local.host"
+  },
+  {
     "name": "discover-eu-niort",
     "address": "shuttleapp.io",
     "country": "FR",
@@ -12,7 +18,7 @@
     "city": "Stockholm"
   },
   {
-    "name": "discover-us-newyork",
+    "name": "discover-us-network",
     "address": "shuttleapp.io",
     "country": "US",
     "city": "New-York"
