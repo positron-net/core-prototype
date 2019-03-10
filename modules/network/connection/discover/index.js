@@ -14,13 +14,13 @@ const discover = {
   connect (server, uid) {
     return new Promise(resolve => {
       
-      sock = new SockJS(`https://${server.address}:5112/echo`)
+      sock = new SockJS(`http://${server.address}:5112/echo`)
 
       console.log(`[INFO] > Connecting to ${server.name}...`)
-      sock.on('open', () => {
+      sock.onopen = () => {
         this.send('ADD_CLIENT', uid)
         resolve(sock)
-      })
+      }
     })
   },
 
@@ -35,11 +35,11 @@ const discover = {
   getRandomClient () {
     return new Promise(resolve => {
       this.send('GET_RANDOM_CLIENT')
-      sock.on('message', msg => {
+      sock.onmessage = msg => {
         if (msg.message === 'RES_GET_RANDOM_CLIENT') {
           resolve(msg.content)
         }
-      })
+      }
     })
   }
 }
