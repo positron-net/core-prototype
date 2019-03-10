@@ -1,32 +1,32 @@
-const WebSocket = require('ws')
+const SockJS = require('sockjs-client')
 const servers = require('./servers.json')
 
-let ws
+let sock
 
 const discover = {
   getServer () {
     return new Promise(resolve => {
-      // Temporary
       const server = servers[Math.floor(Math.random() * servers.length)]
-
       resolve(servers[0])
     })
   },
 
   connect (server, uid) {
     return new Promise(resolve => {
-      ws = new WebSocket(`ws://${server.address}:5112/`)
+      
+      sock = new SockJS(`https://${server.address}:5112/echo`)
+
       console.log(`[INFO] > Connecting to ${server.name}...`)
-      ws.on('open', () => {
+      sock.on('open', () => {
         this.send('ADD_CLIENT', uid)
-        resolve(ws)
+        resolve(sock)
       })
     })
   },
 
 
   send (message, content) {
-    ws.send(JSON.stringify({
+    sock.send(JSON.stringify({
       message: message,
       content: content
     }))
@@ -35,7 +35,7 @@ const discover = {
   getRandomClient () {
     return new Promise(resolve => {
       this.send('GET_RANDOM_CLIENT')
-      ws.on('message', msg => {
+      sock.on('message', msg => {
         if (msg.message === 'RES_GET_RANDOM_CLIENT') {
           resolve(msg.content)
         }

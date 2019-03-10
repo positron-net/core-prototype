@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/positron-net/core#readme",
   "dependencies": {
-    "utp-punch": "^1.0.0",
-    "ws": "^6.1.4"
+    "sockjs-client": "^1.3.0",
+    "utp-punch": "^1.0.0"
   }
 }
